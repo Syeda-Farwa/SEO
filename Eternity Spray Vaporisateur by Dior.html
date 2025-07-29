@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .price {
+            font-size: 24px;
+            color: black;
+            font-weight: bold;
+        }
+
+        .quantity-selector {
+            width: 100px;
+        }
+
+        .product-features li {
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-check:checked+.btn-outline-primary {
+            background-color: black !important;
+            color: white !important;
+            border-color: black !important;
+        }
+
+        .btn-outline-primary {
+            border-color: black !important;
+            color: black !important;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: black !important;
+            color: white !important;
+        }
+
+        .cart-btn {
+            transition: all 0.3s ease;
+        }
+
+        .cart-btn:hover {
+            background-color: white !important;
+            color: black !important;
+            border: 1px solid black !important;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <div class="container py-5">
+        <div class="row g-4">
+            <!-- Product Images -->
+            <div class="col-md-6">
+                <div class="card border-0">
+                    <img src="../images/dior 3.png" alt="Product" class="product-image" />
+                    <div class="row mt-3 g-2">
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Details -->
+            <div class="col-md-6">
+                <div class="card border-0 bg-white p-4">
+                    <h1 class="display-6 fw-bold mb-3">Dior Sauvage Deodorant Spray</h1>
+                    <div class="price mb-3" id="productPrice">99.99</div>
+
+                    <div class="mb-4">
+                        <h5 class="fw-bold">Select Size:</h5>
+                        <div class="btn-group" role="group">
+                            <input type="radio" class="btn-check" name="size" id="small" value="39.99" autocomplete="off"
+                                onchange="updatePrice(this.value)" />
+                            <label class="btn btn-outline-primary" for="small">S (39.99$)</label>
+
+                            <input type="radio" class="btn-check" name="size" id="medium" value="69.99" autocomplete="off"
+                                onchange="updatePrice(this.value)" />
+                            <label class="btn btn-outline-primary" for="medium">M (69.99$)</label>
+
+                            <input type="radio" class="btn-check" name="size" id="large" value="99.99" autocomplete="off"
+                                onchange="updatePrice(this.value)" />
+                            <label class="btn btn-outline-primary" for="large">L (99.99$)</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="quantity" class="form-label fw-bold">Quantity:</label>
+                        <input type="number" class="form-control quantity-selector" id="quantity" value="1" min="1" />
+                    </div>
+
+                    <button class="btn btn-lg w-100 mb-4 bg-black text-white cart-btn">
+                        <i class="bi bi-cart-plus"></i> Add to Cart
+                    </button>
+
+                    <div class="mb-4">
+                        <h5 class="fw-bold">Product Description:</h5>
+                        <p class="text-muted">
+                            This is the Dior Sauvage Deodorant Spray, a refreshing and long-lasting deodorant inspired
+                            by the signature Sauvage fragrance. It provides effective odor protection while delivering
+                            the iconic fresh and woody scent of Sauvage, with notes of bergamot, Sichuan pepper, and
+                            ambroxan. Designed for daily use, it offers a light yet invigorating fragrance experience,
+                            keeping you feeling fresh and confident throughout the day.
+                    </div>
+
+                    <div class="product-features">
+                        <h5 class="fw-bold">Features:</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <i class="bi bi-check2-circle text-primary"></i> High-quality
+                                material
+                            </li>
+                            <li>
+                                <i class="bi bi-check2-circle text-primary"></i> Durable
+                                construction
+                            </li>
+                            <li>
+                                <i class="bi bi-check2-circle text-primary"></i> Easy to
+                                maintain
+                            </li>
+                            <li>
+                                <i class="bi bi-check2-circle text-primary"></i> Modern design
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <script>
+        function updatePrice(price) {
+            document.getElementById("productPrice").innerHTML = `$${price}`;
+        }
+        // Set default selection
+        document.getElementById("medium").checked = true;
+        updatePrice("99.99$");
+    </script>
+</body>
+
+</html>

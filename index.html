@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+    
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+
+        nav {
+            height: 50px;
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6rem;
+            background-color: #000000;
+            padding: 8px 20px;
+
+        }
+
+        .logo {
+            color: white;
+        }
+
+
+        nav a {
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: 0.3s ease-in-out;
+        }
+
+
+        nav a:hover {
+            background-color: #ffffff;
+            color: black;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 34px;
+            background-color: #000000;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 15px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ffffff;
+            color: black;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .drop-btn {
+            position: relative;
+        }
+
+        @media (max-width: 1024px) {
+            nav {
+                gap: 2rem;
+                padding: 10px;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+                padding: 10px 14px;
+            }
+        }
+
+        /* Mobile View (Max Width 768px) */
+        @media (max-width: 768px) {
+            nav {
+                position: relative;
+                flex-direction: column;
+                align-items: center;
+                height: auto;
+                padding: 10px;
+            }
+
+            .logo img {
+                height: 35px;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+                padding: 8px 12px;
+            }
+
+            .dropdown-content {
+                position: static;
+                width: 100%;
+                text-align: center;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+        }
+
+
+        @media (max-width: 480px) {
+            nav {
+                position: relative;
+                flex-direction: column;
+                padding: 8px;
+            }
+
+            .logo img {
+                height: 30px;
+            }
+
+            nav a {
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+
+            .dropdown-content {
+                min-width: 100%;
+                text-align: center;
+            }
+        }
+
+        .carousel-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-item video {
+            width: 100%;
+            height: 90vh;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            z-index: 10;
+        }
+
+        .sect-1 {
+            margin-top: 100px;
+
+        }
+
+        .sect-2 {
+            margin-top: 100px;
+            margin-bottom: 150px;
+
+        }
+
+        .card a {
+            background-color: black;
+            color: white;
+        }
+
+        .carousel {
+            position: relative;
+            bottom: 6px;
+        }
+
+        .carousel h3 {
+            position: absolute;
+            bottom: 300px;
+            left: 100px;
+            font-weight: 300;
+            font-size: 70px;
+        }
+
+        .card {
+            border: none;
+
+
+        }
+
+        .card img {
+            height: 300px;
+        }
+
+        .card a:hover {
+            background-color: white;
+            color: #000000;
+        }
+
+        footer {
+            background-color: #000000;
+            height: 60vh;
+            width: 100%;
+            margin-top: 500px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .sign {
+            width: 500px;
+            position: relative;
+            left: 840px;
+            top: 220px;
+            /* margin: 15px; */
+        }
+
+        label {
+            display: block;
+            color: white;
+            font-weight: light;
+            margin-top: 9px;
+        }
+
+
+        footer li {
+            margin: 30px;
+        }
+
+
+        footer img {
+            margin: 15px;
+            cursor: pointer;
+            border-radius: 50px;
+        }
+
+        footer i {
+            margin: 8px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        footer .mail {
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav aria-label="Primary navigation">
+        <div class="logo">
+            <h1>Paarees</h1>
+        </div>
+        <a href="index.html" title="Go to Home page">Home</a>
+        <div class="dropdown" aria-haspopup="true">
+            <a href="#" class="drop-btn" aria-expanded="false" aria-haspopup="true" title="Brands dropdown">Brands</a>
+            <div class="dropdown-content" role="menu" aria-label="Brands submenu">
+                <a href="Dior.html" role="menuitem" title="Go to Dior brand page">DIOR</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="carousel slide" id="carouselDemo" data-bs-ride="carousel" data-bs-wrap="true" aria-roledescription="carousel" aria-label="Featured perfume videos">
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <video src="Dior.webm" muted autoplay loop playsinline aria-label="Video showcasing Dior perfume"></video>
+                <div class="carousel-caption">
+                    <h3>Dior Perfume Presentation</h3>
+                    <p>Paarees Presenting</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <video src="dior-crystal-noir-ad.webm" muted autoplay loop playsinline aria-label="Dior Crystal Noir advertisement video"></video>
+                <div class="carousel-caption">
+                    <h3>Dior Crystal Noir Advertisement</h3>
+                    <p>Paarees Presenting</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <video src="dior-sauvage-johnny-depp-commercial.mp4" muted autoplay loop playsinline aria-label="Dior Sauvage Johnny Depp commercial video"></video>
+                <div class="carousel-caption">
+                    <h3>Dior Sauvage Commercial</h3>
+                    <p>Paarees Presenting</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <video src="paarees-nautica-perfume-commercial.mp4" muted autoplay loop playsinline aria-label="Paarees Nautica perfume commercial video"></video>
+                <div class="carousel-caption">
+                    <h3>Nautica Perfume Commercial</h3>
+                    <p>Paarees Presenting</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <video src="paarees-burberry-perfume-advertisement.mp4" muted autoplay loop playsinline aria-label="Paarees Burberry perfume advertisement video"></video>
+                <div class="carousel-caption">
+                    <h3>Burberry Perfume Advertisement</h3>
+                    <p>Paarees Presenting</p>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselDemo" data-bs-slide="prev" aria-label="Previous slide">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselDemo" data-bs-slide="next" aria-label="Next slide">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+
+    <section class="sect-1">
+        <h1 style="text-align:center;">Featured Perfumes by Dior</h1>
+        <div class="container-fluid mt-5">
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img src="dior-iconic-perfume.png" alt="Dior Crystal Noir Perfume Bottle"
+                                class="mx-auto d-block" />
+                            <h4 class="card-title">Dior Crystal Noir Eau de Parfum</h4>
+                            <p>Discover the sensual and mysterious scent of Dior's Crystal Noir, a perfect blend of
+                                floral and oriental notes.</p>
+                            <a href="Dior Crystal Noir Eau de Parfum.html" class="btn" title="Buy Dior Crystal Noir Eau de Parfum">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img src="dior-one-gold-eau-de-toilette.png" alt="CK One Gold Eau De Toilette Perfume"
+                                class="mx-auto d-block" />
+                            <h4 class="card-title">CK One Gold Eau De Toilette</h4>
+                            <p>Experience the fresh, youthful, and vibrant scent of CK One Gold, a unisex fragrance that
+                                energizes your spirit.</p>
+                            <a href="CK One Gold Eau De Toilette.html" class="btn" title="Buy CK One Gold Eau De Toilette">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img src="dior-jasmine-coast.png" alt="Eternity Spray Vaporisateur Perfume"
+                                class="mx-auto d-block" />
+                            <h4 class="card-title">Eternity Spray Vaporisateur by Dior</h4>
+                            <p>Feel the timeless elegance of Eternity Spray Vaporisateur with fresh jasmine and floral
+                                accords for a lasting impression.</p>
+                            <a href="Eternity Spray Vaporisateur by Dior.html" class="btn" title="Buy Eternity Spray Vaporisateur by Dior">Buy
+                                Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="sect-2">
+        <h1 style="text-align: center;">Best Selling Perfumes</h1>
+        <div class="container-fluid mt-5">
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img src="dior-crystal-noir-perfume.png" alt="DiorGuilty Perfume Bottle"
+                                class="mx-auto d-block" />
+                            <h4 class="card-title">Dior Guilty Eau de Parfum</h4>
+                            <p>Embrace bold sophistication with Gucci Guilty, a popular fragrance blending floral and
+                                spicy notes.</p>
+                            <a href="Dior Guilty Eau de Parfum.html" class="btn" title="Buy DiorGuilty Eau de Parfum">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img src="dior-defy-eau-de-parfum.png" alt="Jasmine Coast Perfume"
+                                class="mx-auto d-block" />
+                            <h4 class="card-title">Jasmine Coast Eau de Parfum</h4>
+                            <p>Refresh your senses with Jasmine Coast, offering a crisp jasmine aroma ideal for everyday
+                                wear.</p>
+                            <a href="Jasmine Coast Eau de Parfum.html" class="btn" title="Buy Jasmine Coast Eau de Parfum">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img src="dior-eternity-spray.png" alt="Defy Eau De Parfum Perfume"
+                                class="mx-auto d-block" />
+                            <h4 class="card-title">Defy Eau De Parfum</h4>
+                            <p>Stand out with Defy Eau De Parfum, a fragrance designed for confidence and elegance.</p>
+                            <a href="Defy Eau De Parfum.html" class="btn" title="Buy Defy Eau De Parfum">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-white pt-4 pb-4 mt-5" role="contentinfo">
+        <div class="container-fluid">
+            <div class="row">
+
+               
+
+                <div class="col-md-4">
+                    <h4>Quick links</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="contact-us-form.html" class="text-white" title="Write us">Write us</a></li>
+                        <li><a href="About.html" class="text-white" title="About us">About us</a></li>
+                        <li><a href="contact us.html" class="text-white" title="Contact us">Contact us</a></li>
+                        <li><a href="#" class="text-white" title="Privacy Policy">Privacy Policy</a></li>
+                        <li><a href="#" class="text-white" title="FAQs">FAQs</a></li>
+                    </ul>
+                    <hr class="bg-light" />
+                </div>
+
+                <div class="col-md-4">
+                    <h4>Follow Us</h4>
+                    <i class="fa-brands fa-facebook" role="img" aria-label="Facebook"></i>
+                    <i class="fa-brands fa-square-instagram" role="img" aria-label="Instagram"></i>
+                    <i class="fa-brands fa-linkedin" role="img" aria-label="LinkedIn"></i>
+                    <i class="fa-brands fa-x-twitter" role="img" aria-label="Twitter"></i>
+                    <label for="Email">Be a Part of Us and Get Updates</label>
+                    <a href="mailto:PaareesPerfume@gmail.com" class="mail" title="Send us mail">Send us Mail</a>
+                    <hr class="bg-light" />
+                    <h1>Paarees Perfumes</h1>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
